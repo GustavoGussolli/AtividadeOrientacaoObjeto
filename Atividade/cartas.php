@@ -108,53 +108,60 @@
     $pontuacao = 0;
 
     foreach ($cartas as $c){
+
         
-        echo "Numero da carta: " . $c->getNumero() . "\n";
-        echo "Nome da carta: " . $c->getNome() . "\n";
-        echo "Tipo da arma: " . $c->getTipo() . "\n";
+        echo " ---------------------------------------------------------- \n";
+        echo "| Número da carta: " . $c->getNumero() . "\n";
+        echo "| Nome da carta: " . $c->getNome() . "\n";
+        echo "| Tipo da arma: " . $c->getTipo() . "\n";
+        echo " ----------------------------------------------------------\n";
     }
 
     do {
 
+        $pontos = 7;
+
         do{
-        
+
+            if ($elementoDoArray == $cartas[0]){
+                echo "Dica: É uma Katana \n";
+            }
+
+            if ($elementoDoArray == $cartas[1]){
+                echo "Dica: É uma Espada Comprida \n";
+            }
+
+            if ($elementoDoArray == $cartas[2]){
+                echo "Dica: É uma Espada Pesada \n";
+            }
+
+            if ($elementoDoArray == $cartas[3]){
+                echo "Dica: É uma Espada Pesada \n";
+            }
+
+            if ($elementoDoArray == $cartas[4]){
+                echo "Dica: É uma Espada Pesada \n";
+            }
+
+            if ($elementoDoArray == $cartas[5]){
+                echo "Dica: É uma Katana \n";
+            }
+
+            if ($elementoDoArray == $cartas[6]){
+                echo "Dica: É uma Espada Comprida \n";
+            }
+
             $escolha = readline("Advinhe o Número da carta: ");
-
-            if ($elementoDoArray == 1){
-                echo "Dica: ";
-            }
-
-            if ($elementoDoArray == 2){
-                echo "Dica: ";
-            }
-
-            if ($elementoDoArray == 3){
-                echo "Dica: ";
-            }
-
-            if ($elementoDoArray == 4){
-                echo "Dica: ";
-            }
-
-            if ($elementoDoArray == 5){
-                echo "Dica: ";
-            }
-
-            if ($elementoDoArray == 6){
-                echo "Dica: ";
-            }
-
-            if ($elementoDoArray == 7){
-                echo "Dica: ";
-            }
     
             if($escolha == $elementoDoArray->getNumero()){
                 echo "Acertou \n";
-                $pontuacao++;
+                $pontuacao = $pontuacao + $pontos;
             }
                 
-            if ($escolha != $elementoDoArray->getNumero())
+            if ($escolha != $elementoDoArray->getNumero()){
                 echo "Errou \n";
+                $pontos = $pontos - 1;
+            }
            
         } while($escolha != $elementoDoArray->getNumero());    
 
